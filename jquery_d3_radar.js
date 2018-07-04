@@ -1,14 +1,13 @@
  $(document).ready(function(){
-                var input=d3.select('body').append('form').attr('id','form1').attr('method','post').attr('action','/').append('input');
-                input.attr('id','item1').attr('name','item').attr('type','text').attr('value','搜索何人');
-                d3.select('#form1').append('button').append('p').append('input').attr('id','subnow').attr('type','submit')
-                    .attr('value','搜索');
+ var input=d3.select('body').append('form').attr('id','form1').attr('method','post').attr('action','/').append('input');
+ input.attr('id','item1').attr('name','item').attr('type','text').attr('value','搜索何人');
+ d3.select('#form1').append('button').append('p').append('input').attr('id','subnow').attr('type','submit').attr('value','搜索');
         $('form').submit(function(e){
             //alert($(#item1).attr('method'))
-            alert($('#item1').get(0).value);
+            //alert($('#item1').get(0).value);
             var search_word = $('#item1').get(0).value+".json";
             e.preventDefault();
-            alert("Submit prevented");
+            //alert("Submit prevented");
             $.post( (encodeURIComponent(search_word)), function( json ) {
             var li=d3.select('body')
                 .append('ul')
